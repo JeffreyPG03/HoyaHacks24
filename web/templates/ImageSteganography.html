@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="text-center" style="padding-bottom: 1rem;">
+        <h1><b>Image Steganography</b></h1>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="column" style="padding-right: 10px; padding-left: 10px;">
+            <div class="card" style="width: 36rem; height: 30rem;">
+                <div class="text-center" style="padding-top: 1rem;">
+                    <h2><b>Encrypt</b></h2>
+                </div>
+                <section class="flex-container" style="padding-left: 1.25rem;">
+                    <form
+                        method="POST"
+                        action=""
+                        enctype="multipart/form-data"
+                        accept=".txt"
+                    >
+                        <div>
+                            <p>Choose your image to encrypt (.png, .jpg, .jpeg):</p>
+                        </div>
+                        <div class="file_input">
+                            <input
+                                type="file"
+                                name="txt_file"
+                                enctype="multipart/form-data"
+                                accept=".png, .jpg, .jpeg"
+                            />
+                        </div>
+                        <br/>
+                        <label for="etext">Encryption Message:</label>
+                        <textarea
+                            type="textarea"
+                            id="etext"
+                            name="etext"
+                            class=""
+                            cols="60"
+                            rows="6"></textarea>
+                        <div class="text-center" style="padding-top: 2rem;">
+                            <div class="submit_button">
+                                <input
+                                    type="submit"
+                                    name="submit_form"
+                                    value="Encode"
+                                    enctype="multipart/form-data"
+                                />
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+        <div class="column" style="padding-right: 10px; padding-left: 10px;">
+            <div class="card" style="width: 36rem; height: 30rem;">
+                <div class="text-center" style="padding-top: 1rem;">
+                    <h2><b>Decrypt</b></h2>
+                </div>
+                <section class="flex-container" style="padding-left: 1.25rem;">
+                    <div class="file_input_form">
+                        <form
+                            method="POST"
+                            action=""
+                            enctype="multipart/form-data"
+                            accept=".txt"
+                        >
+                            <div class="text-2xl">
+                                <p>Select your image to decrypt (.png, .jpg, .jpeg):</p>
+                            </div>
+                            <div class="file_input">
+                                <input
+                                    type="file"
+                                    name="txt_file"
+                                    enctype="multipart/form-data"
+                                    accept=".png, .jpg, .jpeg"
+                                />
+                            </div>
+                            <br/>
+                            <label for="etext">Decrypted Message:</label>
+                            <br />
+                            <textarea
+                                disabled="true"
+                                type="textarea"
+                                id="etext"
+                                name="etext"
+                                class=""
+                                cols="60"
+                                rows="6"
+                                >{{decrypted_message}}</textarea>
+                            <div class="text-center" style="padding-top: 2rem;">
+                                <div class="submit_button">
+                                    <input
+                                        type="submit"
+                                        name="submit_form"
+                                        value="Decode"
+                                        enctype="multipart/form-data"
+                                    />
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </section>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -38,15 +38,15 @@ def about():
 def TextEncryption():
     return render_template('TextEncryption.html')
 
-@app.route("/ImageStenography") 
-def ImageStenography():
-    return render_template('ImageStenography.html')
+@app.route("/ImageSteganography") 
+def ImageSteganography():
+    return render_template('ImageSteganography.html')
 
 @app.route("/ImageWatermarking")
 def ImageWatermarking():
     return render_template('ImageWatermarking.html')
 
-@app.route('/ImageStenography', methods = ["POST"] )
+@app.route('/ImageSteganography', methods = ["POST"] )
 def lsb():
     #gathering file from form
     uploaded_file = request.files['txt_file']
@@ -76,7 +76,7 @@ def lsb():
                 decodedText = lsb_decode(destination)
                 thread      = threading.Thread(target=removeOld, args=(filename,))
                 thread.start()
-                return render_template('/ImageStenography.html',
+                return render_template('/ImageSteganography.html',
                         PageTitle = "Landing page", decrypted_message=decodedText)
             
         else:
@@ -84,7 +84,7 @@ def lsb():
 
     #This just reloads the page if no file is selected and the user tries to POST. 
     else:
-        return render_template('/ImageStenography.html',
+        return render_template('/ImageSteganography.html',
                         PageTitle = "Landing page", decrypted_message='')
     
 @app.route('/ImageWatermarking', methods = ["POST"] )

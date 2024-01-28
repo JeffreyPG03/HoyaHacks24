@@ -156,3 +156,5 @@ def des_decr(encr_str):
     decrypted_message_text = binary_to_string(decrypted_message)
     return decrypted_message_text
     # return encr_str
+
+# print(des_decr())
