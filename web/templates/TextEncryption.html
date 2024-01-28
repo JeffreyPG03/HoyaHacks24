@@ -1,7 +1,62 @@
 {% extends "layout.html" %}
 {% block content %}
-    <div>
-        <h1>Text Encryption Page</h1>
-        <h2>Work in Progress...</h2>
+    <div class="text-center" style="padding-bottom: 1rem;">
+        <h1><b>Text Encryption</b></h1>
+    </div>
+    <div class="d-flex justify-content-center">
+        <div class="column" style="padding-right: 10px; padding-left: 10px;">
+            <div class="card" style="width: 36rem; height: 40rem;">
+                <div class="text-center" style="padding-top: 1rem;">
+                    <h2><b>Encrypt</b></h2>
+                </div>
+                <section class="flex-container" style="padding-left: 1.25rem;">
+                    <form
+                        method="POST"
+                        action=""
+                        enctype="multipart/form-data"
+                        accept=".txt"
+                    >
+                        <label for="etext">Message you want to encrypt:</label>
+                        <textarea
+                            type="textarea"
+                            id="etext"
+                            name="etext"
+                            class=""
+                            cols="60"
+                            rows="6"></textarea>
+                            <div style="padding-top: 2rem;"></div>
+                            <label for="etext">Encrypted Message:</label>
+                            <div style="padding-top: 2rem;"></div>
+                            <textarea
+                                disabled="true"
+                                type="textarea"
+                                id="etext"
+                                name="etext"
+                                class=""
+                                cols="60"
+                                rows="6"
+                                >{{encrypted_message}}</textarea>
+                        <div class="text-center" style="padding-top: 2rem;">
+                            <div class="submit_button">
+                                <input
+                                    type="submit"
+                                    name="submit_form"
+                                    value="Encrypt"
+                                    enctype="multipart/form-data"
+                                />
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+        <div class="column" style="padding-right: 10px; padding-left: 10px;">
+            <div class="card" style="width: 36rem; height: 40rem;">
+                <div class="text-center" style="padding-top: 1rem;">
+                    <h2><b>Decrypt</b></h2>
+                </div>
+                <div class="text-center" style="padding-top: 2rem;"><p>Use local device to decrypt the messages!</p></div>
+            </div>
+        </div>
     </div>
 {% endblock %}

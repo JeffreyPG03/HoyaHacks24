@@ -9,6 +9,8 @@ import time
 from src.lsb.lsb import lsb_encode, lsb_decode
 from src.dwt_enc.dwt_enc import dwt_encode, dwt_decode
 from src.dwt_wm.dwt_wm import watermark, ext_watermark
+from src.des.des import des_enc
+from src.des.des_decr import des_decr
 
 app = Flask(__name__)
 
@@ -147,6 +149,27 @@ def dwt_wm():
     else:
         return render_template('/ImageWatermarking.html',
                         PageTitle = "Landing page")
+    
+@app.route('/TextEncryption', methods = ["POST"] )
+def des():
+    #gathering file from form
+    data = request.form['etext']
+    
+    #making sure its not empty
+    if data != '':
+        if request.form['submit_form'] == 'Encrypt':
+            encryptedText = des_enc(data)
+            return render_template('/TextEncryption.html',
+                PageTitle = "Landing page", encrypted_message=encryptedText)
+        if request.form['submit_form'] == 'Decrypt':
+            decryptedText = des_decr(data)
+            return render_template('/TextEncryption.html',
+                PageTitle = "Landing page", decrypted_message=decryptedText)
+
+    #This just reloads the page if no file is selected and the user tries to POST. 
+    else:
+        return render_template('/TextEncryption.html',
+                        PageTitle = "Landing page", decrypted_message='')
     
 @app.route('/images/<name>', methods=['GET', 'POST'])
 def download_(name):
