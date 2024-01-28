@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="text-center" style="padding-bottom: 1rem; padding-top: 1rem;">
+        <h1>P.E.N.G.U.</h1>
+        <h2>Private Encrypted Networking with Garenteed Unbreakability</h2>
+    </div>
+    <div class="d-flex justify-content-center" style="padding-bottom: 2rem;">
+        <div class="column" style="padding-right: 10px; padding-left: 10px;">
+            <div class="card" style="width: 24rem; height: 55rem;">
+                <img class="card-img-top" src="/static/assests/encryption.jpeg" alt="Card image cap" style="height: 12rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Text Encryption</h5>
+                    <div style="height: 33rem; padding-bottom: 2rem;">
+                        <p class="card-text">Introducing our cutting-edge text encryption tool — a robust solution designed to safeguard your digital communication. In an era where privacy is paramount, our tool empowers you to encrypt your text messages with ease. Whether you're sharing sensitive information, discussing confidential matters, or simply valuing the privacy of your conversations, our encryption tool ensures that your messages remain secure from prying eyes. Enjoy peace of mind knowing that your textual exchanges are shielded by state-of-the-art encryption technology. Elevate your communication experience and prioritize confidentiality with our user-friendly text encryption tool. Your words, your privacy – now in your control.</p>
+                    </div>
+                    <div class="text-center" style="height: fit-content;">
+                        <a href="/TextEncryption" class="btn btn-primary btn-lg">Start Encrypting!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column" style="padding-right: 10px; padding-left: 10px;">
+            <div class="card" style="width: 24rem; height: 55rem;">
+                <img class="card-img-top" src="/static/assests/steganography.jpeg" alt="Card image cap" style="height: 12rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Image Stenography</h5>
+                    <div style="height: 33rem; padding-bottom: 2rem;">
+                        <p class="card-text">
+                            Introducing our advanced image steganography tool, a versatile solution that seamlessly integrates both LSB (Least Significant Bit) and DWT (Discrete Wavelet Transform) encryption methods. Unleash the power of covert communication by embedding messages within your images, offering dual-layer protection for your data. With LSB, discreetly alter the least significant bits of pixel values, and with DWT, employ a sophisticated wavelet-based technique for enhanced security. Whether you prioritize simplicity or desire a more intricate encryption process, our tool caters to your preferences. Elevate your confidentiality game with the perfect blend of LSB and DWT methods, ensuring your hidden messages stay protected within the visual realm. Explore the fusion of convenience and sophistication in image steganography – because your data deserves the utmost security.</p>
+                    </div>
+                    <div class="text-center" style="height: fit-content;">
+                        <a href="/ImageStenography" class="btn btn-primary btn-lg">Start Embedding!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column" style="padding-right: 10px; padding-left: 10px;">
+            <div class="card" style="width: 24rem; height: 55rem;">
+                <div style="height: 2rem;"></div>
+                <div style="padding-left: 4px;">
+                    <img class="card-img-top" src="/static/assests/watermark.png" alt="Card image cap" style="height: 10rem;">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Image Watermarking</h5>
+                    <div style="height: 33rem; padding-bottom: 2rem;">
+                        <p class="card-text">Introducing our innovative image watermarking tool — a dynamic solution that seamlessly embeds one image into another, ensuring a unique and personalized mark on your visual content. Elevate your branding and content ownership with this powerful tool, designed to merge images seamlessly while preserving the integrity of both. Whether you're safeguarding your digital assets, enhancing brand recognition, or simply adding a touch of personalization, our image watermarking tool offers a hassle-free process. Imprint your signature, logo, or any desired image onto your visuals effortlessly, creating a distinctive and unmistakable mark. Embrace the perfect blend of functionality and aesthetics with our image watermarking tool, because your visuals deserve to stand out while staying protected.</p>
+                    </div>
+                    <div class="text-center" style="height: fit-content;">
+                        <a href="/ImageWatermarking" class="btn btn-primary btn-lg">Start Watermarking!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
